@@ -130,5 +130,7 @@ def index():
                            orig_img=orig_img, mask_img=mask_img, skel_img=skel_img)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render provides PORT env var
+    app.run(host="0.0.0.0", port=port, debug=False)
+
 
